@@ -1,4 +1,3 @@
-// src/pages/CourseDetails.jsx
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getCourse, recordStudy, enroll, createNote } from '../api';
@@ -54,7 +53,7 @@ export default function CourseDetails() {
   }, [slug]);
 
   useEffect(() => {
-    // initialize bookmark state from localStorage
+    
     try {
       const raw = localStorage.getItem('learnhub_bookmarks');
       let arr = [];
@@ -76,7 +75,7 @@ export default function CourseDetails() {
       localStorage.setItem('learnhub_bookmarks', JSON.stringify(next));
       setBookmarked(next.includes(slug));
     } catch {
-      // If storage is unavailable, still reflect UI state
+    
       setBookmarked(prev => !prev);
     }
   };

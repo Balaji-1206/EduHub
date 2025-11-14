@@ -6,7 +6,7 @@ const User = require('../models/User');
 
 const { auth, requireRole } = require('../middleware/auth');
 
-// admin stats
+
 router.get('/stats', auth, requireRole('admin'), async (req, res) => {
   const courses = await Course.countDocuments();
   const users = await User.countDocuments();

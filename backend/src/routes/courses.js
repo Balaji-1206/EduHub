@@ -10,7 +10,7 @@ router.get('/', listCourses);
 router.get('/:slug', getCourse);
 
 // instructor protected
-// accept one cover image and up to 5 asset files
+
 router.post('/', auth, requireRole('instructor'), upload.fields([{ name: 'cover', maxCount: 1 }, { name: 'assets', maxCount: 5 }]), createCourse);
 
 // enroll

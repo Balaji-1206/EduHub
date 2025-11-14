@@ -28,7 +28,6 @@ app.use('/api/courses', courseRoutes);
 app.use('/api/notes', noteRoutes);
 app.use('/api/admin', adminRoutes);
 
-// health
 app.get('/', (req, res) => res.json({ ok: true, name: 'LearnHub API' }));
 
 const PORT = process.env.PORT || 4000;

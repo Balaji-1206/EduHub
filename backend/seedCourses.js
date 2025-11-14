@@ -35,10 +35,10 @@ async function seedCourses() {
     });
     console.log('MongoDB connected');
 
-    // Clear existing courses (we remove them so the seed inserts fresh records)
+    
     await Course.deleteMany({});
 
-    // Add slugs to each course
+  
     const coursesWithSlugs = courses.map(c => ({
       ...c,
       slug: slugify(c.title),

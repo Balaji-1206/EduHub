@@ -1,18 +1,16 @@
-// src/components/Navbar.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export default function Navbar({ user, setUser }) {
   const nav = useNavigate();
   const loc = useLocation();
-  const [open, setOpen] = useState(false); // mobile menu
-  // profile dropdown removed; clicking avatar navigates directly to profile
+  const [open, setOpen] = useState(false); 
   const [scrolled, setScrolled] = useState(false);
   const [q, setQ] = useState('');
   const profileRef = useRef();
 
   useEffect(() => {
-    // (no dropdown to close anymore)
+   
     return () => {};
   }, []);
 
@@ -23,7 +21,7 @@ export default function Navbar({ user, setUser }) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // logout moved to Profile page
+ 
 
   const isActive = (path) => loc.pathname === path || loc.pathname.startsWith(path + '/');
 

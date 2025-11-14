@@ -34,7 +34,7 @@ const myEnrollments = async (req, res) => {
 };
 
 module.exports = { me, listUsers, myEnrollments };
-// Additional profile endpoints
+
 
 const updateMe = async (req, res) => {
   try {
@@ -57,7 +57,7 @@ const uploadAvatarHandler = [
   async (req, res) => {
     try {
       if (!req.file) return res.status(400).json({ message: 'No file uploaded' });
-      // store relative URL starting with /uploads
+      
       const rel = '/uploads/' + path.basename(req.file.path);
       req.user.avatarUrl = rel;
       await req.user.save();

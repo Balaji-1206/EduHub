@@ -1,4 +1,3 @@
-// src/components/ForgotPasswordModal.jsx
 import React, { useState } from 'react';
 import { forgotPassword } from '../api';
 
@@ -14,11 +13,11 @@ export default function ForgotPasswordModal({ show, onClose }) {
     setStatus({ loading: true, msg: null, ok: null });
     try {
       const res = await forgotPassword({ email });
-      // backend should respond with success message
+      
       const msg = res?.data?.message || 'If an account exists, you will receive reset instructions (check spam).';
       setStatus({ loading: false, msg, ok: true });
     } catch (err) {
-      // If endpoint missing or returns 404/500, show helpful message
+   
       const serverMsg = err.response?.data?.message ||
         'We could not complete the request. If you have an account, try contacting support.';
       setStatus({ loading: false, msg: serverMsg, ok: false });

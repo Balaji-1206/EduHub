@@ -37,7 +37,7 @@
   }
 }
 
-/* Decorative course banners (fallback for images) */
+
 .course-card {
   transition: transform .15s ease, box-shadow .15s ease;
 }

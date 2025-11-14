@@ -1,4 +1,3 @@
-// src/pages/Contact.jsx
 import React, { useState } from 'react';
 
 export default function Contact() {
@@ -8,7 +7,7 @@ export default function Contact() {
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
   const onSubmit = (e) => {
     e.preventDefault();
-    // In a real app, post to backend or email service
+    
     setSent(true);
     setTimeout(() => setSent(false), 4000);
   };

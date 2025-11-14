@@ -1,4 +1,3 @@
-// src/pages/Notes.jsx
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { listNotes, createNote, listCourses, updateNoteApi, deleteNoteApi, togglePinApi } from '../api';
 

@@ -50,7 +50,7 @@ const getStreak = async (req, res) => {
 
     const events = await Progress.find({ enrollment: { $in: ids } }).select('timestamp').sort({ timestamp: 1 });
     const daySet = new Set(events.map(e => dateKey(e.timestamp)));
-    const days = Array.from(daySet).sort(); // ascending YYYY-MM-DD
+    const days = Array.from(daySet).sort(); 
 
     // longest streak
     let longest = 0, cur = 0, prev = null;

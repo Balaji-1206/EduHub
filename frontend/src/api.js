@@ -1,11 +1,10 @@
-// src/api.js
 import axios from 'axios';
 
 const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:4000/api';
 
 const api = axios.create({ baseURL: API_BASE, timeout: 10000 });
 
-// Token migration: move from 'eduhub_token' to 'learnhub_token' if needed
+
 (() => {
   try {
     const newKey = 'learnhub_token';
@@ -14,19 +13,19 @@ const api = axios.create({ baseURL: API_BASE, timeout: 10000 });
     const oldVal = localStorage.getItem(oldKey);
     if (!hasNew && oldVal) {
       localStorage.setItem(newKey, oldVal);
-      // keep old key for now to avoid surprises; can be removed later
+      
     }
   } catch {}
 })();
 
-// Attach token automatically
+
 api.interceptors.request.use(cfg => {
   const t = localStorage.getItem('learnhub_token') || localStorage.getItem('eduhub_token');
   if (t) cfg.headers.Authorization = `Bearer ${t}`;
   return cfg;
 });
 
-// add this to src/api.js (alongside the other exports)
+
 export const forgotPassword = (data) => api.post('/auth/forgot', data);
 
 

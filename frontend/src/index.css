@@ -1,6 +1,4 @@
-﻿/* src/index.css - full-screen login visuals + small app-wide rules */
-
-:root{
+﻿:root{
   --glass-bg: rgba(255,255,255,0.85);
   --card-radius: 14px;
   --primary: #0d6efd;

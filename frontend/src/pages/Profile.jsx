@@ -1,4 +1,3 @@
-// src/pages/Profile.jsx
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { myEnrollments, getStreak, getCalendar, updateProfile, uploadAvatar, getCourse } from '../api';
